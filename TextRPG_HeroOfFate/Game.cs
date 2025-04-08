@@ -56,6 +56,8 @@ namespace TextRPG_HeroOfFate
             sceneDic.Add("Title", new TitleScene());
             sceneDic.Add("Grassland", new GrasslandScene());
             sceneDic.Add("Town", new TownScene());
+            sceneDic.Add("Town")
+            sceneDic.Add()
 
             //시작씬
             curScene = sceneDic["Title"];
