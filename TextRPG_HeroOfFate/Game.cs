@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextRPG_HeroOfFate.Scene;
 
 namespace TextRPG_HeroOfFate
 {
@@ -27,14 +28,22 @@ namespace TextRPG_HeroOfFate
             }
 
             End();
+        }        
+
+        public static void ChangeScene(string sceneName)
+        {
+            curScene = sceneDic[sceneName];
         }
 
         private static void Start()
         {
             gameOver = false;
 
+            //씬 설정
             sceneDic = new Dictionary<string, BaseScene>();
+            //씬 추가
             sceneDic.Add("Title", new TitleScene());
+
 
             curScene = sceneDic["Title"];
         }
