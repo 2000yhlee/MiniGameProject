@@ -10,6 +10,7 @@ namespace TextRPG_HeroOfFate
     {
         static void Main(string[] args)
         {
+            Game.Run();
         }
     }
 }
