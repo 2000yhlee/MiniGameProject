@@ -43,8 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseScene.cs" />
+    <Compile Include="ExtensionAndUtil.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scene\GrasslandScene.cs" />
+    <Compile Include="Scene\GroveScene.cs" />
+    <Compile Include="Scene\TitleScene.cs" />
+    <Compile Include="Scene\TownScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

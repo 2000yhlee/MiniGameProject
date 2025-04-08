@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace TextRPG_HeroOfFate
 {
     public class Player
-    {
+    {        
         public Vector2 position;
 
         public void Print()
         {
             Console.SetCursorPosition(position.x, position.y);
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine('p');
+            Console.WriteLine('P');
             Console.ResetColor();
         }
 

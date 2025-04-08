@@ -35,6 +35,7 @@ namespace TextRPG_HeroOfFate.Scene
                 case ConsoleKey.D1:
                     Util.PressAnyKey("마을로 진입합니다.");
                     Game.ChangeScene("Town");
+                    break;
             }
         }
     }
