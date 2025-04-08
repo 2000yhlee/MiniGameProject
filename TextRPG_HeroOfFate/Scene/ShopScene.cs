@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextRPG_HeroOfFate.Scene
 {
-    class Shop : BaseScene
+    class ShopScene : BaseScene
     {
         private ConsoleKey input;
         public override void Render()

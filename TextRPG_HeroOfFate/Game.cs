@@ -44,6 +44,9 @@ namespace TextRPG_HeroOfFate
 
         private static void Start()
         {
+            //커서 안보이게
+            Console.CursorVisible = false;
+
             //게임 설정
             gameOver = false;
 
@@ -56,8 +59,9 @@ namespace TextRPG_HeroOfFate
             sceneDic.Add("Title", new TitleScene());
             sceneDic.Add("Grassland", new GrasslandScene());
             sceneDic.Add("Town", new TownScene());
-            sceneDic.Add("TownOldma", new TownOldman());
-            sceneDic.Add("Shop", new Shop());
+            sceneDic.Add("TownOldman", new TownOldman());
+            sceneDic.Add("Shop", new ShopScene());
+            sceneDic.Add("Grove", new GroveScene());
 
             //시작씬
             curScene = sceneDic["Title"];

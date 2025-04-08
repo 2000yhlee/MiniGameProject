@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextRPG_HeroOfFate
 {
-    public class Player
+    public class Player : Struct
     {        
         public Vector2 position;
 
