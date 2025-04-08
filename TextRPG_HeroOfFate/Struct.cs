@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextRPG_HeroOfFate
 {
-    class Struct
+    public class Struct
     {
         public struct Vector2
         {
