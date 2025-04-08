@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using TextRPG_HeroOfFate.Scene;
@@ -12,6 +13,9 @@ namespace TextRPG_HeroOfFate
         private static Dictionary<string, BaseScene> sceneDic;
         private static BaseScene curScene;
 
+        private static Player player;
+        public static Player Player { get { return player; } }
+
         private static bool gameOver;
 
         public static void Run()
@@ -22,8 +26,11 @@ namespace TextRPG_HeroOfFate
             {
                 Console.Clear();
                 curScene.Render();
+                Console.WriteLine();
                 curScene.Input();
+                Console.WriteLine();
                 curScene.Update();
+                Console.WriteLine();
                 curScene.Result();
             }
 
@@ -37,13 +44,18 @@ namespace TextRPG_HeroOfFate
 
         private static void Start()
         {
+            //게임 설정
             gameOver = false;
+
+            //플레이어 설정
+            player = new Player();
 
             //씬 설정
             sceneDic = new Dictionary<string, BaseScene>();
             //씬 추가
             sceneDic.Add("Title", new TitleScene());
-
+            sceneDic.Add("Grassland", new GrasslandScene());
+            sceneDic.Add("Town", new TownScene());
 
             curScene = sceneDic["Title"];
         }
