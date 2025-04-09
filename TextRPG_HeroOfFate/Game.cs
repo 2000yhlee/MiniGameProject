@@ -8,6 +8,14 @@ using TextRPG_HeroOfFate.Scene;
 
 namespace TextRPG_HeroOfFate
 {
+    // 퀘스트 상태를 정의하는 열거형
+    public enum QuestState
+    {
+        NotReceived,
+        Received,
+        Completed
+    }
+
     public class Game
     {
         private static Dictionary<string, BaseScene> sceneDic;
@@ -16,7 +24,17 @@ namespace TextRPG_HeroOfFate
         private static Player player;
         public static Player Player { get { return player; } }
 
+        // 노인 퀘스트의 현재상태
+        private static QuestState oldmanQuestState = QuestState.NotReceived;
+        // 다른 클래스에서 접근 가능하도록 공개 프로퍼티 제공
+        public static QuestState OldmanQuestState
+        {
+            get { return oldmanQuestState; }
+            set { oldmanQuestState = value; }
+        }
+        // 게임 종료 여부
         private static bool gameOver;
+
 
         public static void Run()
         {
@@ -62,6 +80,8 @@ namespace TextRPG_HeroOfFate
             sceneDic.Add("TownOldman", new TownOldman());
             sceneDic.Add("Shop", new ShopScene());
             sceneDic.Add("Grove", new GroveScene());
+            sceneDic.Add("Bar", new BarScene());
+            sceneDic.Add("Smithy", new SmithyScene());
 
             //시작씬
             curScene = sceneDic["Title"];

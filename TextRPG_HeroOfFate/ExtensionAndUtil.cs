@@ -13,7 +13,7 @@ namespace TextRPG_HeroOfFate
 
     public class Util
     {
-        public static void PressAnyKey(string text)
+        public static void PressAnyKey(string text = "아무키나 눌러 진행하세요.")
         {
             Console.WriteLine(text);
             Console.WriteLine("아무키나 눌러 진행하세요.");
