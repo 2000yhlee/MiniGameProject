@@ -42,7 +42,7 @@ namespace TextRPG_HeroOfFate.Scene
                     }
 
                     Game.Player.Inventory.Remove(demonBlood);
-                    Game.Player.Inventory.Add(new RefinedDemonBlood(new Struct.Vector2(0, 0)));
+                    Game.Player.Inventory.Add(new RefinedDemonBlood(new Math.Vector2(0, 0)));
                     Console.WriteLine("악마의 피를 가공했습니다.");
                     isRefined = true;
                     break;

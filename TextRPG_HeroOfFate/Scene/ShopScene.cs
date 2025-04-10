@@ -13,9 +13,9 @@ namespace TextRPG_HeroOfFate.Scene
         private ConsoleKey input;
         private List<MainItem> itemForSale = new List<MainItem>
         {
-            new Potion(new Struct.Vector2 (0, 0)),
-            new Armor('A', new Struct.Vector2(0, 0)),
-            new Weapon('!', new Struct.Vector2(0, 0), "작은 철제 칼", "작고 날카로운 검이다.")
+            new Potion(new Math.Vector2 (0, 0)),
+            new Armor('A', new Math.Vector2(0, 0)),
+            new Weapon('!', new Math.Vector2(0, 0), "작은 철제 칼", "작고 날카로운 검이다.")
         };
         public override void Render()
         {
@@ -24,11 +24,7 @@ namespace TextRPG_HeroOfFate.Scene
             Console.WriteLine("당신은 가게 프론트에 앉아있는 주인에게 다가가 말을 겁니다.");
             Console.WriteLine();
             Console.WriteLine("주인은 당신을 맞이하며 구매할 수 있는 물건을 보여줍니다.");
-            Console.WriteLine();
-            Console.WriteLine("1. 포션");
-            Console.WriteLine("2. 갑옷");
-            Console.WriteLine("3. 작은 철제 칼");
-            Console.WriteLine("0. 마을로 돌아가기");
+            
             Console.WriteLine();
             Console.WriteLine("구매할 물건을 선택하세요");
 
@@ -36,6 +32,8 @@ namespace TextRPG_HeroOfFate.Scene
             {
                 Console.WriteLine($"{i + 1}. {itemForSale[i].name} - {itemForSale[i].description}");
             }
+
+            Console.WriteLine("0. 마을로 돌아가기");
         }
         public override void Input()
         {

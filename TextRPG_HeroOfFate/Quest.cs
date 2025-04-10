@@ -2,6 +2,14 @@
 
 namespace TextRPG_HeroOfFate
 {
+    // 퀘스트 상태를 정의하는 열거형
+    public enum QuestState
+    {
+        NotReceived,
+        Received,
+        Completed
+    }
+
     public class Quest
     {
         public string Title { get; set; }

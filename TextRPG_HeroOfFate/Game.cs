@@ -4,18 +4,12 @@ using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
+using TextRPG_HeroOfFate.GameObject;
 using TextRPG_HeroOfFate.Scene;
 
 namespace TextRPG_HeroOfFate
 {
-    // 퀘스트 상태를 정의하는 열거형
-    public enum QuestState
-    {
-        NotReceived,
-        Received,
-        Completed
-    }
-
+   
     public class Game
     {
         private static Dictionary<string, BaseScene> sceneDic;
@@ -58,6 +52,7 @@ namespace TextRPG_HeroOfFate
         public static void ChangeScene(string sceneName)
         {
             curScene = sceneDic[sceneName];
+            curScene.Enter(); //씬 전환시 Enter 호출;
         }
 
         private static void Start()
@@ -82,6 +77,7 @@ namespace TextRPG_HeroOfFate
             sceneDic.Add("Grove", new GroveScene());
             sceneDic.Add("Bar", new BarScene());
             sceneDic.Add("Smithy", new SmithyScene());
+            sceneDic.Add("LittleForest", new LittleForest());
 
             //시작씬
             curScene = sceneDic["Title"];

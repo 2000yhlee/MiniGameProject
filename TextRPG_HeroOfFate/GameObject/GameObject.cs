@@ -10,10 +10,12 @@ namespace TextRPG_HeroOfFate.GameObject
     {
         public ConsoleColor color;
         public char symbol;
-        public Struct.Vector2 position;
+        public Math.Vector2 position;
         public bool isOnce;
 
-        public GameObject(ConsoleColor color, char symbol, Struct.Vector2 position, bool isOnce)
+        public string name;
+
+        public GameObject(ConsoleColor color, char symbol, Math.Vector2 position, bool isOnce)
         {
             this.color = color;
             this.symbol = symbol;

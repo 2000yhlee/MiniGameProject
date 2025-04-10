@@ -8,7 +8,7 @@ namespace TextRPG_HeroOfFate.GameObject
 {
     public class RefinedDemonBlood : MainItem
     {
-        public  RefinedDemonBlood (Struct.Vector2 position): base ('R', position)
+        public  RefinedDemonBlood (Math.Vector2 position): base ('R', position)
         {
             name = "가공된 악마의 피";
             description = "죽음의 전당에 들어갈 수 있는 강력한 결정체";

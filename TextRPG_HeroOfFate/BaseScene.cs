@@ -8,6 +8,7 @@ namespace TextRPG_HeroOfFate
 {
     public abstract class BaseScene
     {
+        public string name;
         public abstract void Render();
         public abstract void Input();
         public abstract void Update();

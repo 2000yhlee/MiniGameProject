@@ -1,5 +1,5 @@
 ﻿using System;
-using static TextRPG_HeroOfFate.Struct;
+using static TextRPG_HeroOfFate.Math;
 
 namespace TextRPG_HeroOfFate.GameObject
 {

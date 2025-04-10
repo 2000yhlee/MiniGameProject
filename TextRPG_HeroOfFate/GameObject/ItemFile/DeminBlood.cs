@@ -9,7 +9,7 @@ namespace TextRPG_HeroOfFate.GameObject
 {
     public class DeminBlood : MainItem
     {
-        public DeminBlood(Struct.Vector2 position) : base('D', position)
+        public DeminBlood(Math.Vector2 position) : base('D', position)
         {
             name = "악마의 피";
             description = "강력한 마력을 품은 붉은 액체, 왠지 쓸모가 있을 듯 하다.";

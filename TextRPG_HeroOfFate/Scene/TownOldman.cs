@@ -48,18 +48,41 @@ namespace TextRPG_HeroOfFate.Scene
         }
         public override void Update()
         {
+            // 처음 노인을 찾아갔을때 
             if (Game.OldmanQuestState == QuestState.NotReceived && Game.Player.HasWeapon())
             {
-                if(input == ConsoleKey.D1)
+                if (input == ConsoleKey.D1)
                 {
                     Game.OldmanQuestState = QuestState.Received;
                     Console.WriteLine("작은 숲으로 가서 늑대를 처치하시오");
                     Util.PressAnyKey();
+                    Game.ChangeScene("Town");
                 }
                 else if (input == ConsoleKey.D2)
                 {
                     Console.WriteLine("노인 : 그렇다면 어쩔 수 없군... 만약 마음이 동한다면 나중에라도 부탁함세");
+                    Util.PressAnyKey();
+                    Game.ChangeScene("Town");
                 }
+            }
+            else if(Game.OldmanQuestState == QuestState.Received && Game.Player.HasWeapon()) //퀘스트를 받고 노인을 찾아왔을 경우
+            {
+                bool haswolfBone = Game.Player.Inventory.Items.Any(item => item.name == "늑대의 뼈"); 
+
+                if (haswolfBone)
+                {
+                    Game.OldmanQuestState = QuestState.Completed;
+                    Console.WriteLine("노인 : 오오! 늑대를 잡아왔구만");
+                    Console.WriteLine("보상으로 이걸 줌세 아마 앞으로의 모험에 큰 도움이 될껄세");
+                    Util.PressAnyKey("수정구슬을 얻었다!");
+                }
+                else
+                {
+                    Console.WriteLine("노인 : 늑대는 아직인가?");
+                    Util.PressAnyKey("작은 숲으로 가서 늑대를 잡아오자");
+                }
+
+                Game.ChangeScene("Town");
             }
             else
             {

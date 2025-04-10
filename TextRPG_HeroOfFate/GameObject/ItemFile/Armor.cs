@@ -8,7 +8,7 @@ namespace TextRPG_HeroOfFate.GameObject.Item
 {
     public class Armor : MainItem
     {
-        public Armor(char symbol, Struct.Vector2 position) : base('A', position)
+        public Armor(char symbol, Math.Vector2 position) : base('A', position)
         {
             name = "갑옷";
             description = "단단해 보이는 갑옷이다.";

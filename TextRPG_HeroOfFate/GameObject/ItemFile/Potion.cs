@@ -11,7 +11,7 @@ namespace TextRPG_HeroOfFate.GameObject.Item
 {
     public class Potion : MainItem
     {
-        public Potion(Struct.Vector2 position) : base('P', position)
+        public Potion(Math.Vector2 position) : base('P', position)
         {
             name = "포션";
             description = "체력을 회복하는 물약입니다.";

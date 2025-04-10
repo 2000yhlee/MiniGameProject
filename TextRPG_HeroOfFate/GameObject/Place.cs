@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static TextRPG_HeroOfFate.Struct;
+using static TextRPG_HeroOfFate.Math;
 
 namespace TextRPG_HeroOfFate.GameObject
 {

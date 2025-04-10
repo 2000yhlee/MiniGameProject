@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TextRPG_HeroOfFate.GameObject;
+using TextRPG_HeroOfFate.GameObject.Item;
 
 namespace TextRPG_HeroOfFate
 {
     public class Player
     {        
-        public Struct.Vector2 position;
+        public Math.Vector2 position;
         private Inventory inventory;
         public Inventory Inventory { get { return inventory; } }
 
@@ -18,10 +19,20 @@ namespace TextRPG_HeroOfFate
 
         public bool[,] map;
 
-        private int curHP;
+        public int curHP;
         public int CurHP { get { return curHP; } }
         private int maxHP;
         public int MaxHP { get { return maxHP; } }
+
+        private int attack;
+
+        public int Attack { get { return attack; }}
+
+        private Weapon equippedWeapon;
+        private Armor equippedArmor;
+
+        public Weapon EquippedWeapon => equippedWeapon;
+        public Armor EqippedArmor => equippedArmor;
 
         public Player()
         {
@@ -29,6 +40,13 @@ namespace TextRPG_HeroOfFate
             Quests = new List<Quest>();
             maxHP = 100;
             curHP = maxHP;
+            attack = 3;
+        }
+
+        public void EquipWeapon(Weapon weapon)
+        {
+            equippedWeapon = weapon;
+            attack = 3 + weapon.power;
         }
 
         public bool HasWeapon()
@@ -49,7 +67,7 @@ namespace TextRPG_HeroOfFate
         {
             Console.SetCursorPosition(position.x, position.y);
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine('P');
+            Console.Write('P');
             Console.ResetColor();
         }
 
@@ -71,7 +89,7 @@ namespace TextRPG_HeroOfFate
 
         public void Move(ConsoleKey input)
         {
-            Struct.Vector2 targetPos = position;
+            Math.Vector2 targetPos = position;
 
             switch (input)
             {
@@ -89,7 +107,9 @@ namespace TextRPG_HeroOfFate
                     break;
             }
 
-            if (map[targetPos.y, targetPos.x] == true)
+            if (targetPos.y >= 0 && targetPos.y < map.GetLength(0) &&
+                targetPos.x >= 0 && targetPos.x < map.GetLength(1) &&
+                map[targetPos.y, targetPos.x])
             {
                 position = targetPos;
             }

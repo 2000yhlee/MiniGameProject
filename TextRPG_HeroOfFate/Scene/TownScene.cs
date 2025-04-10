@@ -23,6 +23,10 @@ namespace TextRPG_HeroOfFate.Scene
             Console.WriteLine("2. 무시하고 가까이 있는 상점으로 들어간다.");
             Console.WriteLine("3. 근처에 있는 대장간으로 향한다.");
             Console.WriteLine("4. 왁자지껄한 주점으로 향한다.");
+            if (Game.OldmanQuestState == QuestState.Received)
+            {
+                Console.WriteLine("5. 작은 숲으로 향한다.");
+            }
         }
         public override void Input()
         {
@@ -65,6 +69,13 @@ namespace TextRPG_HeroOfFate.Scene
                 case ConsoleKey.D4:
                     Util.PressAnyKey("주점으로 향합니다..");
                     Game.ChangeScene("Bar");
+                    break;
+                case ConsoleKey.D5:
+                    if (Game.OldmanQuestState == QuestState.Received)
+                    {
+                        Util.PressAnyKey("작은 숲으로 향한다...");
+                        Game.ChangeScene("LittleForest");
+                    }
                     break;
             }
 
